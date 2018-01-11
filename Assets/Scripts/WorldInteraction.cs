@@ -13,12 +13,14 @@ public class WorldInteraction : MonoBehaviour {
     private void Start()
     {
         playerAgent = GetComponent<NavMeshAgent>();
+        Debug.Log("playerAgent is good!");
     }
 
     private void Update()
     {
         if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) 
         {
+            Debug.Log("Clicked somewhere!");
             GetInteraction();
         }
         if (Input.GetKey(KeyCode.LeftShift)) {

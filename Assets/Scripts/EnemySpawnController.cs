@@ -21,7 +21,7 @@ public class EnemySpawnController : MonoBehaviour
         // find the Enemies directory where the spawned enemies are stored
         enemies = GameObject.Find("Enemies");
         enemySlime = Resources.Load<Slime>("Prefabs/Enemies/Slime");
-        //SpawnEnemies();
+        SpawnEnemies();
     }
 
     // Update is called once per frame
@@ -46,10 +46,10 @@ public class EnemySpawnController : MonoBehaviour
     {
         float posX = Random.Range(spawnPosition.transform.position.x - Random.Range(enemyDistanceMin, enemyDistanceMax), spawnPosition.transform.position.x + Random.Range(enemyDistanceMin, enemyDistanceMax));
         float posZ = Random.Range(spawnPosition.transform.position.z - Random.Range(enemyDistanceMin, enemyDistanceMax), spawnPosition.transform.position.z + Random.Range(enemyDistanceMin, enemyDistanceMax));
-        //Debug.Log("ESC - SpawnEnemy - pos: " + posX +"," + spawnPosition.transform.position.y + "," + posZ);
+        Debug.Log("ESC - SpawnEnemy - pos: " + posX +"," + spawnPosition.transform.position.y + "," + posZ);
         Slime slimeInstance = (Slime)Instantiate(enemySlime, new Vector3(posX, spawnPosition.transform.position.y, posZ), spawnPosition.transform.rotation);
         slimeInstance.transform.SetParent(enemies.transform, false);
         allEnemyCount++;
-        //Debug.Log("ESC - SpawnEnemy - allEnemyCount: " + allEnemyCount);
+        Debug.Log("ESC - SpawnEnemy - allEnemyCount: " + allEnemyCount);
     }
 }
